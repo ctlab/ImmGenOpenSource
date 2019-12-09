@@ -1,0 +1,6 @@
+#!/bin/sh
+
+exec java -Djava.library.path=/home/octopus/R-studio/private-libraries/lib \
+    -Xmx2G \
+    -cp /home/octopus/R-studio/private-libraries/lib/cplex.jar:/home/octopus/Downloads/sgmwcs-solver.jar \
+    ru.ifmo.ctddev.gmwcs.Main "$@"

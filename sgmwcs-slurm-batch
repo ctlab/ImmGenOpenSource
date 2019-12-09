@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+
+# echo "start"
+
+set -e
+
+NODES=""
+EDGES=""
+SYNONYMS=""
+THREADS="1"
+
+cmd=()
+
+while [[ $# > 0 ]]; do
+    case "$1" in
+        -a|--array) ARRAY="$2"; shift 2;;
+        -d|--dir) DIR="$2"; shift 2;;
+        -m|--threads) cmd+=("-m"); cmd+=($(basename "$2")); THREADS="$2"; shift 2;;
+        *) cmd+=("$1"); shift;;
+    esac
+done
+
+
+
+# echo "while cycle"
+
+DST=$(ssh sphinx mktemp -d --tmpdir='/scratch/$USER/to_solve')
+
+rsync -qrP "${DIR}"/ sphinx:${DST}/
+
+# echo "rsync doings"
+
+echo "${cmd[@]}"
+ssh sphinx "cd $DST; sbatch -W -J sgmwcs --array=${ARRAY} --cpus-per-task=$THREADS --mem=16G -t 60" <<END
+#!/bin/bash
+instance=$DST/\$SLURM_ARRAY_TASK_ID
+\$HOME/bin/gmwcs2 -n \$instance/nodes.txt -e \$instance/edges.txt -s \$instance/synonyms.txt ${cmd[@]}
+END
+
+echo "rsync back"
+rsync -qrP sphinx:${DST}/ "${DIR}"/
