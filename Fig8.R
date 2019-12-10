@@ -1,7 +1,7 @@
-library(pheatmap)
-library(RColorBrewer)
-
-load("~/Documents/immGen/final_objects/337_es.total.Rda")
+source("utils.R")
+load("Data/pathway2name.rda")
+load("Data/pathways.rda")
+load("Data/337_es.total.Rda")
 
 Control_Calb <- c(
   "MF.45lo.CNS.1",
@@ -31,36 +31,23 @@ calbList <- c("MF.11blop64p169p.Lv.1",
               "MF.45lo.Calb.48h.CNS.1",
               "MF.45lo.Calb.48h.CNS.2")
 
-
-
-# genes
-fData(es)$gene[grep("Nos|nos", fData(es)$gene)]
+### genes
 gnsh <- c("Il1b", "Il6", "Acod1", "Arg1", "Tnf", "Cxcl2", "Cxcl10", "Ptgs2",
           "Retnla", "Ccl22", "H2-Ab1", "H2-Aa", "Mrc1", "Clec10a", "Nos2")
 
-ttt <- exprs(es)[which(fData(es)$gene %in% gnsh), which(es$treatment %in%
-                                                          c("Control (C. albicans)",
-                                                            "8h post-infection (C. albicans)",
-                                                            "48h post-infection (C. albicans)"))]
-dim(ttt)
-colnames(ttt)
-ttt <- ttt[, calbList]
+ttt <- exprs(es)[which(fData(es)$gene %in% gnsh), calbList]
 
 cr <- colorRampPalette(c("#0000ff","#ffffff","#ff0000"))
 
 out <- pheatmap(
   rUtils::normalize.rows(ttt),
   cluster_rows=T, cluster_cols=F,
-  file="~/Documents/immGen/GAM-clustering/10_32_04_191021_Todorov_32/Clustering/_current/Fig8/genesHeatmap.pdf", width=5, height=5, # 12, 8
+  file="genesHeatmap.pdf", width=5, height=5,
   show_rownames=T, show_colnames=T,
-  color = cr(1000), border_color = "grey60") #,
+  color = cr(1000), border_color = "grey60")
 
-
-
-
-# modules
-# load("~/Documents/immGen/GAM-clustering/10_32_04_191021_Todorov_32/session.RDa")
-session::restore.session("~/Documents/immGen/GAM-clustering/10_32_04_191021_Todorov_32/session.RDa")
+### modules
+session::restore.session("Data/session.RDa")
 
 curRev <- revs[[k]]
 range(gene.exprs)
@@ -83,18 +70,12 @@ rownames(eyegene) <- paste("Module", 1:9)
 out <- pheatmap(
   rUtils::normalize.rows(eyegene),
   cluster_rows=F, cluster_cols=F,
-  file="~/Documents/immGen/GAM-clustering/10_32_04_191021_Todorov_32/Clustering/_current/Fig8/modulesHeatmap.pdf", width=5, height=4.25,
+  file="modulesHeatmap.pdf", width=5, height=4.25,
   show_rownames=T, show_colnames=T,
   color = cr(1000))
   # color = rev(brewer.pal(9,"RdYlBu")))
 
-
-
-
-# pathways
-load("~/Documents/immGen/pathways/pathway2name.rda")
-load("~/Documents/immGen/pathways/pathways.rda")
-
+### pathways
 pathway2name$PATHID[which(pathway2name$PATHNAME == "Glycolysis")]
 gP <- pathways$`R-MMU-70171`
 pathway2name$PATHID[which(pathway2name$PATHNAME == "Pentose phosphate pathway")]
@@ -144,135 +125,57 @@ rownames(PATs) <- pnsh
 out <- pheatmap(
   rUtils::normalize.rows(PATs),
   cluster_rows=F, cluster_cols=F,
-  file="~/Documents/immGen/GAM-clustering/10_32_04_191021_Todorov_32/Clustering/_current/Fig8/pthwsHeatmap.pdf", width=6, height=4, # 12, 8
+  file="pthwsHeatmap.pdf", width=6, height=4, # 12, 8
   show_rownames=T, show_colnames=T,
   color = cr(1000), border_color = "grey60")
   # color = rev(brewer.pal(9,"RdYlBu")))
 
+### DE
+countData <- read.table("Data/OSMNP_unnormalized_genes_count_10_3_18.count_table", sep = "\t", header = T)
+# <making ExpressionSet with unnormalized counts and taking top 12k genes>
+es_dds <- es.top12k[, calbList]
 
+pData(es_dds)$C.alb <- c(
+ "LvContr", "LvContr", "Lv8h", "Lv8h",  "Lv48h", "Lv48h",
+ "KdContr", "KdContr", "Kd8h", "Kd8h", "Kd48h", "Kd48h",  
+ "CNSContr", "CNSContr", "CNS8h", "CNS8h", "CNS48h", "CNS48h")
 
-# DE
-### Loading count data
-countData <- read.table("~/Documents/immGen/OSMNP_unnormalized_genes_count_10_3_18.count_table", sep = "\t", header = T)
-rownames(countData) <- countData$gene_symbol
-countData <- countData[,-1]
-dim(countData) # 52997   414
+dds <- rUtils::DESeqDataSetFromExpressionSet(es_dds, design = ~ C.alb)
+dds <- dds[rowSums(counts(dds)) > 20, ]
+dds <- DESeq(dds)
 
-### Loading meta data
-load("~/Documents/immGen/GAM-clustering/10_32_04_191021_Todorov_32/Clustering/_current/es.top12k.Rda")
-# load("~/Documents/immGen/final_objects/337_es.top12k.Rda") # the same but not almost correct metaSample anno
-anno <- Biobase::pData(es.top12k)
-unique(anno$metaSample)
-View(anno)
-# cellTypes
-anno$cellTypes <- anno$metaSample
-anno$cellTypes[anno$metaSample %in% c("MF_tissue_resident",
-                                      "MF_embr_E6.0E8.0_and_Alv_and_SPM",
-                                      "MG",
-                                      "MF_adipose_tissue")] <- "MF"
-anno$cellTypes[anno$metaSample %in% c("DC_tissue_resident",
-                                      "pDC_BM_Sp",
-                                      "DC_mig")] <- "DC"
-unique(anno$cellTypes)
-
-### Filter and reorder count table
-countData <- countData[, rownames(anno)]
-dim(countData)
-head(colnames(countData))
-head(rownames(anno))
-
-### Filter rarely expressed genes
-y <- edgeR::DGEList(counts = countData)
-keep <- rowSums(edgeR::cpm(y) > 1) >= 3
-y <- y[keep,]
-dim(y)
-y$samples$lib.size = colSums(y$counts) # reset lib sizes
-
-### Normalisation and log
-ytmm <- edgeR::calcNormFactors(y, method = "TMM")
-# limma::plotMDS(ytmm, col=anno$Batch, pch=16) # metric - log2 FC-s between samples
-
-### Gene filtering
-entrez <- AnnotationDbi::mapIds(org.Mm.eg.db::org.Mm.eg.db,
-                                keytype = "SYMBOL",
-                                column = "ENTREZID",
-                                keys=as.character(rownames(ytmm)))
-unique(entrez[which(duplicated(entrez))]) # NA
-length(which(is.na(entrez))) #
-
-ytmm <- ytmm[-which(is.na(entrez)), ]
-ytmm <- ytmm[head(order(apply(ytmm, 1, mean), decreasing = T), 12000), ]
-dim(ytmm)
-head(rownames(ytmm))
-
-### log and de
-design <- model.matrix(~0+cellTypes, data = anno); design
-design <- model.matrix(~0+metaSample, data = anno); design
-# colnames(design) <- levels(TS)
-cs <- unique(colnames(design)); cs
-dplyr::all_equal(cs, colnames(design))
-
-library(limma)
-v <- voom(ytmm, design, plot = TRUE)
-fit <- lmFit(v, design)
-
+cs <- unique(es_dds$LPS)
 des <- list()
-cntrsts <- c()
-
-for(i in seq_along(cs)){
-  for(j in seq_along(cs)){
-    if(i==j)
+for (i in seq_along(cs)) {
+  for (j in seq_along(cs)) {
+    if (i == j)
       next
-    cntrsts <- c(cntrsts, paste(cs[[i]], "-", cs[[j]]))
+    
+    res <- rUtils::normalizeGeneDE(results(dds, contrast = c("LPS", cs[j], cs[i]), cooksCutoff = F))
+    res <- res[head(order(baseMean, decreasing=T), 12000), ]
+    res <- res[order(stat), ]
+    tag <- sprintf("%s.vs.%s", cs[i], cs[j])
+    des[[tag]] <- res
+    
+    rUtils::write.tsv(res, file=sprintf(paste0(current_path, "DESeq_%s.tsv"), tag))
   }
 }
 
-for(i in seq_along(cntrsts)){
-  crrnt <- cntrsts[i]
-  fit2 <- contrasts.fit(fit, makeContrasts(vs=crrnt,
-                                           levels=design))
-  fit2 <- eBayes(fit2)
-  de <- topTable(fit2, adjust.method="BH", number=Inf)
-  tag <- sprintf("%s.vs.%s",
-                 strsplit(crrnt, " - ")[[1]][2],
-                 strsplit(crrnt, " - ")[[1]][1])
-  des[[tag]] <- de
-
-  rUtils::write.tsv(de,
-                    file=
-                      sprintf("~/Documents/immGen/DE/20191105_metaSample/cellTypes/%s.tsv",
-                              tag))
-}
-
-
-
-
-
-
 # gatom / GAM
-path <- "~/Documents/immGen/DE/20191105_metaSample/metaSamples/need/"
-path <- "~/Documents/immGen/DE/20191105_metaSample/cellTypes/"
-path <- "~/Documents/immGen/DE/20191105_metaSample/metaSamples/Mo_vs_allMFs/"
-filenames <- list.files(path, pattern="*.tsv", full.names=TRUE)
+path <- "Data"
+filenames <- list.files(path, pattern="DESeq_*.tsv", full.names=TRUE)
 list_of_de2 <- lapply(filenames, readr::read_tsv)
 
-k.gene <- c(85) #,100
+k.gene <- c(60, 70, 85, 95)
 
-nms <- gsub(".tsv", "",
-            gsub("metaSample", "",
-                 list.files(path, pattern="*.tsv")))
-nms
+nms <- gsub(".tsv", "", gsub("metaSample", "", list.files(path, pattern="*.tsv")))
 
-library(dplyr)
-library(gatom)
-library(data.table)
 load(url("http://artyomovlab.wustl.edu/publications/supp_materials/GATOM/network.rda"))
 load(url("http://artyomovlab.wustl.edu/publications/supp_materials/GATOM/met.kegg.db.rda"))
 load(url("http://artyomovlab.wustl.edu/publications/supp_materials/GATOM/org.Mm.eg.gatom.anno.rda"))
 org.Mm.eg.gatom.anno$mapFrom$Symbol <- rbind(org.Mm.eg.gatom.anno$mapFrom$Symbol, data.table(gene="16365", Symbol="Irg1"))
 data.table::setkeyv(org.Mm.eg.gatom.anno$mapFrom$Symbol, "Symbol")
 
-# i = 3
 ed2 <- function(list_of_de2, k.gene, nms) {
 
   for (i in seq_along(list_of_de2)) {
@@ -338,18 +241,3 @@ ed2 <- function(list_of_de2, k.gene, nms) {
 }
 
 ed2(list_of_de2, k.gene, nms)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

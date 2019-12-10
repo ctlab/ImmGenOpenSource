@@ -1,57 +1,21 @@
-# Sys.setenv("http_proxy" = "http://rain.ifmo.ru:3128")
-library(data.table)
-library(rUtils)
-library(GAM)
-library(GAM.networks)
+source("utils.R")
 library(reactome.db)
-library(org.Mm.eg.db)
 library(KEGGREST)
-# library(KEGG.db)
-data("kegg.mouse.network")
 network <- kegg.mouse.network
+module.dir <- "Data"
+load(file="Data/243_es.top12k.Rda")
+# session::restore.session("Data/session.RDa")
 
-
-#  data prep
-# Input:
-# @eset - ExpressionSet with the expression data
-# @de - differential expression data.table
-# All the genes that are considered
-
-# started from here ===========================================================
-View(exprs(es))
-View(exprs(es.top10k))
-View(es.top10k)
-str(fData(es.top10k)$Entrez)
-
-session::restore.session("~/Documents/immGen/GAM-clustering/10_32_04_191021_quant_32/session.RDa")
-load(file="~/R-studio/nclust/immGene/new/es.top12k_new.rda")
-
-
-universe <- entrez
-universe <- entrz
-universe <- fData(es)$entrez
-universe <- fData(es_dds)$Entrez
-universe <- fData(baloon_col.top12k)$Entrez
-universe <- fData(es.top12k)$Entrez
-universe <- fData(es.top12k)$entrez
 universe <- rownames(fData(es.top12k))
-universe <- rownames(exprs(baloon_col.top12k))
 str(universe)
-# head(entrez)
 
 str(reactome.db)
 reactomepath <- na.omit(AnnotationDbi::select(reactome.db, universe, "PATHID", "ENTREZID"))
 reactomepath <- split(reactomepath$ENTREZID, reactomepath$PATHID)
 head(reactomepath)
 
-
-# m_dir <- ...
-
-
-
-module.dir <- m_dir
-m_files <- list.files(m_dir,"m\\.[0-9]+\\.genes\\.tsv", full.names = T)
-m_filenames <- list.files(m_dir,"m\\.[0-9]+\\.genes\\.tsv")
+m_files <- list.files(module.dir, "m\\.[0-9]+\\.genes\\.tsv", full.names = T)
+m_filenames <- list.files(module.dir, "m\\.[0-9]+\\.genes\\.tsv")
 
 keggmodule <- keggLink("mmu", "module")
 keggmodule <- gsub("mmu:", "", keggmodule)
@@ -88,40 +52,20 @@ reactomepathway2name <- as.data.table(na.omit(
 # Remove organism prefix
 reactomepathway2name[, PATHNAME := sub("^[^:]*: ", "", PATHNAME)]
 
-
-
 # combine kegg modules and pathways with reactome data
 pathways <- c(reactomepath, keggmodule, keggpathway)
 pathways <- pathways[sapply(pathways, length) >= 10]
-# ?
+#
 pathways$`5991024` <- NULL
 pathways$`R-MMU-1430728` <- NULL # Metabolism
 pathways$`mmu01100` <- NULL # Metabolic pathways
 pathways$`mmu01200` <- NULL # Carbon metabolism
-pathways$`mmu01230` <- NULL # Biosynthesis of amino acids
+# pathways$`mmu01230` <- NULL # Biosynthesis of amino acids
 # pathways$`R-MMU-71387` <- NULL # Metabolism of carbohydrates
-
-
 
 pathway2name <- do.call("rbind", list(reactomepathway2name,
                                       keggmd2name,
                                       keggpath2name))
-# View(pathway2name)
-# View(pathways)
-
-# pathway2name <- do.call("rbind", list(reactomepathway2name,
-#                                       keggpath2name))
-
-
-
-#####
-
-
-# fgseaResMain <- fgseaRes[match(mainPathways, pathway)]
-# fgseaResMain[, leadingEdge := lapply(leadingEdge, mapIds, x=org.Mm.eg.db,
-#                                      keytype="ENTREZID", column="SYMBOL")]
-# fwrite(fgseaResMain, file="fgseaResMain.txt", sep="\t", sep2=c("", " ", ""))
-
 
 gseaReactome <- function(genes) {
   overlaps <- data.frame(
@@ -150,7 +94,6 @@ gseaReactome <- function(genes) {
   res <- res[order(pval),]
   res <- res[, c(1, 2, 3, 4, 6, 7, 5)]
 }
-
 
 load(url("http://artyomovlab.wustl.edu/publications/supp_materials/GATOM/org.Mm.eg.gatom.anno.rda"))
 # dplyr::glimpse(org.Mm.eg.gatom.anno)

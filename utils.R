@@ -1,31 +1,27 @@
-library(BiocParallel)
-library(org.Mm.eg.db)
-library(devtools)
-library(GAM)
-library(GAM.db)
-library(GAM.networks)
-library(gatom)
-library(cluster)
-library(igraph)
-library(limma)
-library(pryr)
-library(plyr)
-library(rUtils)
-library(data.table)
-library(BioNet)
-library(logging)
-library(pheatmap)
-library(igraph)
-library(parallel)
-library(ggplot2)
+Packages <- c("BiocManager", "BioNet", "Biobase", 
+              "devtools", "parallel", "logging", 
+              "cluster", "data.table", "plyr", 
+              "pryr", "dplyr", "ggplot2", "cowplot",
+              "pheatmap", "igraph", "RColorBrewer",
+              "BiocParallel", "DESeq2", "limma", 
+              "org.Mm.eg.db", "scales",
+              "gatom", "rUtils", "GAM", 
+              "GAM.db", "GAM.networks")
+lapply(Packages, library, character.only = TRUE)
+
+# devtools::install_github("ctlab/gatom")
+# devtools::install_github("ctlab/GAM")
+# devtools::install_github("assaron/rUtils")
+# source("https://raw.githubusercontent.com/assaron/r-utils/master/R/exprs.R")
+# load(url("http://artyomovlab.wustl.edu/publications/supp_materials/GATOM/network.rda"))
+
 data("met.id.map")
 data("kegg.mouse.network")
 GAM:::lazyData("met.id.map")
 GAM:::lazyData("kegg.db")
 enz2gene <- kegg.db$enz2gene
 rxn2enz <- kegg.db$rxn2enz
-load("SupplData/reflink.rda")
-
+load("Data/reflink.rda")
 
 tissueColorsList <- list(
   Aorta = "#771155",
@@ -207,9 +203,6 @@ makeAtomGraph <- function(network,
   g
 }
 
-
-
-
 makeENetworkWithScore <- function(score, base, network) {
   fake.gene.de <- data.frame(
     ID=names(score),
@@ -295,7 +288,6 @@ sgmwcs.batchSolver2 <- function(sgmwcs, nthreads = 1, timeLimit = -1,
   }
 }
 
-
 makeNetwork <- function(gene.de, met.de=NULL, largest.component=TRUE) {    
     stopifnot(require(igraph))
     GAM:::lazyData("kegg.db")
@@ -353,8 +345,6 @@ collapseAtoms2 <- function(m) {
     res <- igraph::add.edges(m, matrix(c(toCollapse$v.x, toCollapse$v.y), nrow=2, byrow=T))    
     res
 }
-
-
 
 collapseAtoms <- function(m) {
     nodes <- data.frame(GAM:::get.vertex.attributes(m), stringsAsFactors=F)
@@ -418,7 +408,6 @@ processModule <- function(module, dir, name=NULL, do.png=F, keep.dot=F) {
     
 }
 
-# g <- g1
 mwcsize <- function(g) {         
     was.connected <- is.connected(g)
     et <- as.data.table(get.edge.attributes(g))
@@ -469,7 +458,6 @@ demwcsize <- function(m, g) {
 }
 
 get.score <- function(m) sum(V(m)$score) + sum(E(m)$score)
-
 
 heinz2mc.solver <- function (heinz2, niter = 1000) 
 {
@@ -541,13 +529,10 @@ heinz2.solver <- function (heinz2, nthreads = 1, timeLimit = -1)
     }
 }
 
-
 writeGmwcsInstance <- function(graph.dir, network,
                    nodes.group.by=NULL, 
                    edges.group.by=NULL,
                    group.only.positive=F) {
-    
-    
     
     dir.create(graph.dir, showWarnings = FALSE)
     edges.file <- file.path(graph.dir, "edges.txt")
@@ -589,8 +574,6 @@ writeGmwcsInstance <- function(graph.dir, network,
                                     paste0, collapse=" ")$name
             )    
         }
-        
-        
     }        
     et <- rename(et[, c("from", "to", "score")], c("from"="#from"))
     
@@ -660,8 +643,6 @@ writeGraph2 <- function(g, prefix) {
     write.tsv(et, file=paste0(prefix, ".edges.tsv"))
 }
 
-
-
 doGatom <- function(dir, tag, gene.de, met.de, k=100, 
                     e.threshold.min=-log2(0.01),
                     v.threshold.min=-log2(0.01),
@@ -700,14 +681,12 @@ doGatom <- function(dir, tag, gene.de, met.de, k=100,
     
     de.mod <- solve(g1)
     
-    
     de.mod1 <- de.mod
     
     if (is.null(met.de)) {
         V(de.mod1)$score <- -0.01
     }
-    
-    
+  
     de.mod2 <- solve.syn2(de.mod1)
     
     processModule(collapseAtoms2(de.mod2), dir=dir, 
@@ -731,7 +710,6 @@ doGatom <- function(dir, tag, gene.de, met.de, k=100,
     
     de.mod2
 }
-
 
 doGatom2 <- function(solve, dir, tag, gene.de, met.de, k=100, k.met=k, 
                     e.threshold.min=0.1,
@@ -792,9 +770,7 @@ doGatom2 <- function(solve, dir, tag, gene.de, met.de, k=100, k.met=k,
         g1 <- delete.edges(g1, E(g1)[origin %in% del])    
     }
     
-    
     de.mod <- solve(g1)
-    
     
     de.mod1 <- de.mod
     
@@ -815,7 +791,6 @@ doGatom2 <- function(solve, dir, tag, gene.de, met.de, k=100, k.met=k,
         
         de.mod2 <- add.edges(de.mod2, rbind(toAdd$from, toAdd$to), attr=tail(as.list(toAdd), -2))
     }
-    
     
     if (!is.null(dir)) {
         if (do.col2) {
@@ -842,6 +817,7 @@ doGatom2 <- function(solve, dir, tag, gene.de, met.de, k=100, k.met=k,
     
     de.mod2
 }
+
 gseaFisher <- function(pathways, universe, genes, minSize=10, maxSize=Inf) {
     pathways <- lapply(pathways, intersect, universe)
     pathways <- pathways[sapply(pathways, length) >= minSize & sapply(pathways, length) <= maxSize]
@@ -996,8 +972,6 @@ makeENetworkWithDist <- function(gene.dist.to.cluster, base, network) {
     es.re.scored
 }
 
-
-
 getCenter <- function(gene.exprs, cluster.genes=seq_len(nrow(gene.exprs)), cluster.genes.neg=c(), method=c("pearson", "spearman")) {
     method <- match.arg(method)
 
@@ -1090,12 +1064,10 @@ gamCluster <- function(gene.exprs, tag, work.dir, network=kegg.mouse.network, sh
                     show_colnames=T)
             }
 
-
             if (!redo && cor.diff < 0.001) {
                 break
             }
             redo <- FALSE
-
 
             print(paste0("Difference: ", cor.diff))
             print(paste0("Core: ", paste0(core, collapse=" ")))
@@ -1113,7 +1085,6 @@ gamCluster <- function(gene.exprs, tag, work.dir, network=kegg.mouse.network, sh
             if (is.null(module)) {
                 module <- findModule(es.rn.scored, solver.heinz)
             }
-
 
             if (FALSE) {
                 n <- es.rn.scored$subnet.scored
@@ -1137,9 +1108,7 @@ gamCluster <- function(gene.exprs, tag, work.dir, network=kegg.mouse.network, sh
             if (length(cluster.genes.new) >= 10) {
                 cluster.genes <- cluster.genes.new
             }
-
-
-
+            
             #         cluster.genes<- intersect(E(module)$RefSeq, rownames(gene.exprs))
 #             saveModuleToXgmml(
 #                 module,
@@ -1187,9 +1156,6 @@ gamCluster <- function(gene.exprs, tag, work.dir, network=kegg.mouse.network, sh
 
     res
 }
-
-
-
 
 makeNetworkWithCorTest <- function(gene.cor.test, base, network, eps=0) {
     gene.cor.pval <- sapply(gene.cor.test, function(x) x$p.value)
@@ -1269,8 +1235,6 @@ makeENetworkWithCorTest <- function(gene.cor, gene.cor.pval, base, network, eps=
     es.re
 }
 
-
-
 gamCluster2 <- function(gene.exprs, tag, work.dir, network=kegg.mouse.network, show_colnames=T, cor.method="pearson") {
     stopifnot(require(cluster))
     stopifnot(require(GAM))
@@ -1289,7 +1253,6 @@ gamCluster2 <- function(gene.exprs, tag, work.dir, network=kegg.mouse.network, s
     diag(gene.pairwise.cor) <- 0
     gene.cor.dist <- as.dist(1 - gene.pairwise.cor)
     gene.pairwise.cor.sd <- sd(gene.pairwise.cor[upper.tri(gene.pairwise.cor)])
-
 
     gK <- 2
     gK <- 10
@@ -1329,8 +1292,6 @@ gamCluster2 <- function(gene.exprs, tag, work.dir, network=kegg.mouse.network, s
     # gene.dist.to.cluster.closest <- apply(gene.dist.to.clusters, 1, min)
     # gene.dist.to.cluster.which <- apply(gene.dist.to.clusters, 1, which.min)
 
-
-
     if (FALSE) {
         z <- sample(gene.pairwise.cor[upper.tri(gene.pairwise.cor)], 10000)
         qplot(z, binwidth=1/64)
@@ -1344,14 +1305,9 @@ gamCluster2 <- function(gene.exprs, tag, work.dir, network=kegg.mouse.network, s
     baseMean <- apply(gene.exprs, 1, mean)
 
     i <- 1
-
-
-
-
-
+    
     #dir.create(sprintf("%s/refined", work.dir), showWarnings=FALSE, recursive=TRUE)
-
-
+    
     idxs <- 6:10
     idxs <- c(2, 7)
     idxs <- 4
@@ -1391,17 +1347,14 @@ gamCluster2 <- function(gene.exprs, tag, work.dir, network=kegg.mouse.network, s
                     show_colnames=show_colnames)
             }
 
-
             if (!redo && cor.diff < 0.001) {
                 break
             }
             redo <- FALSE
 
-
             loginfo("Difference: %s", cor.diff)
             loginfo("Core: %s", paste0(cluster.genes, collapse=" "))
             loginfo("iteration #%s, base=%s", it, base)
-
 
             gene.cor <- cor(t(gene.exprs), as.matrix(center), method=cor.method)[,1]
 
@@ -1409,7 +1362,6 @@ gamCluster2 <- function(gene.exprs, tag, work.dir, network=kegg.mouse.network, s
 #                     apply(gene.exprs, 1, cor.test, y=center, exact=F, alternative="t", method="spearman")
 #             gene.cor.pval <- sapply(gene.cor.test, function(x) x$p.value)
 #             gene.cor.rho <- sapply(gene.cor.test, function(x) unname(x$estimate))
-
 
             gene.cor.pval <- 2*pnorm(-abs(gene.cor), mean = 0, sd=gene.pairwise.cor.sd)
             if (base <= 0) {
@@ -1433,7 +1385,6 @@ gamCluster2 <- function(gene.exprs, tag, work.dir, network=kegg.mouse.network, s
 
                 loginfo("iteration #%s, base=%s", it, base)
             }
-
 
             # es.rn.scored <- makeNetworkWithCorTest(gene.cor.test, base, network)
             es.re.scored <- makeENetworkWithCorTest(gene.cor, gene.cor.pval, base, network)
@@ -1477,8 +1428,6 @@ gamCluster2 <- function(gene.exprs, tag, work.dir, network=kegg.mouse.network, s
                 cluster.genes.neg <- cluster.genes.new.neg
             }
 
-
-
             #         cluster.genes<- intersect(E(module)$RefSeq, rownames(gene.exprs))
             #             saveModuleToXgmml(
             #                 module,
@@ -1502,7 +1451,6 @@ gamCluster2 <- function(gene.exprs, tag, work.dir, network=kegg.mouse.network, s
             }
             it = it + 1
         }
-
 
         if (!is.null(module)) {
             es.re.scored <- makeENetworkWithCorTest(gene.cor, gene.cor.pval, base, network, eps=-0.01)
@@ -1557,9 +1505,6 @@ gamCluster2 <- function(gene.exprs, tag, work.dir, network=kegg.mouse.network, s
     res
 }
 
-
-
-
 writeClusterGenes <- function(exprs, cluster, tag, work.dir) {
     for (i in seq_along(cluster$centers)) {
         if (is.null(dim(cluster$centers[[i]]))) {
@@ -1578,7 +1523,6 @@ writeClusterGenes <- function(exprs, cluster, tag, work.dir) {
         writeLines(unique(V(m)[nodeType == "met"]$label), file.path(work.dir, sprintf("%s.c%s.module.mets.tsv", tag, i)))
     }
 }
-
 
 writeClusterGenesE <- function(exprs, cluster, tag, work.dir, cor.method="pearson") {
     gene.pairwise.cor <- cor(t(exprs), method=cor.method)
@@ -1612,14 +1556,10 @@ writeClusterGenesE <- function(exprs, cluster, tag, work.dir, cor.method="pearso
     }
 }
 
-
-
-
 geneSimilarity <- function(module1, module2) {
     setSimilarity(V(module1)[nodeType == "rxn"]$origin,
                   V(module2)[nodeType == "rxn"]$origin)
 }
-
 
 loadClusters <- function(dir) {
     files <- list.files(dir, pattern="c\\d+\\.tsv$")
@@ -1635,7 +1575,6 @@ loadClusters <- function(dir) {
     }
     clusters
 }
-
 
 adjustClusters <- function(gene.exprs, clusters, tag, work.dir, network, base=0.5, cut=base, show_colnames=T) {
     dir.create(work.dir, recursive=T, showWarnings=F)
@@ -1670,9 +1609,7 @@ adjustClusters <- function(gene.exprs, clusters, tag, work.dir, network, base=0.
         genes <- lapply(clusters, function(c) network$gene.id.map[na.omit(match(unique(c$genes), Symbol)), Entrez] )
     }
 
-
     res <- mergeModules(genes, groups=as.list(seq_along(genes)))
-
 
     while (TRUE) {
         centers <- lapply(genes, getCenter, gene.exprs=gene.exprs)
@@ -1683,7 +1620,6 @@ adjustClusters <- function(gene.exprs, clusters, tag, work.dir, network, base=0.
 
         groups <- cutree(h, h=cut)
         groups <- split(seq_along(groups), groups)
-
 
 #         mm <- pairwiseCompare(setSimilarity, genes)
 #         mm <- pairwiseCompare(cor, centers)
@@ -1710,7 +1646,6 @@ adjustClusters <- function(gene.exprs, clusters, tag, work.dir, network, base=0.
         genes <- lapply(res$modules, function(m) unique(V(m)[nodeType=="rxn"]$origin))
     }
 
-
     toKeep <- sapply(res$modules, function(m) sum(V(m)$score > 0) >= 5)
     res$modules <- res$modules[toKeep]
     res$centers <- res$centers[toKeep]
@@ -1723,10 +1658,6 @@ adjustClusters <- function(gene.exprs, clusters, tag, work.dir, network, base=0.
             name=sprintf("%s.gene.%s.refined", tag, i))
     }
 
-
-
-
-
     png(file=sprintf("%s/clusters.final.png", work.dir), width=1000, height=500)
 
     pheatmap(
@@ -1735,11 +1666,9 @@ adjustClusters <- function(gene.exprs, clusters, tag, work.dir, network, base=0.
         show_colnames=show_colnames)
     dev.off()
 
-
     writeClusterGenes(exprs=gene.exprs, cluster=res, tag=tag, work.dir=work.dir)
     res
 }
-
 
 adjustClusters2 <- function(gene.exprs, clusters, tag, work.dir, network, base, cut=0.5, show_colnames=T, cor.method="pearson") {
     dir.create(work.dir, recursive=T, showWarnings=F)
@@ -1772,7 +1701,6 @@ adjustClusters2 <- function(gene.exprs, clusters, tag, work.dir, network, base, 
                 next
             }
 
-
             module <- findModule(es.re.scored, solver.gmwcs.big)
             while (is.null(module)) {
                 Sys.sleep(30)
@@ -1799,7 +1727,6 @@ adjustClusters2 <- function(gene.exprs, clusters, tag, work.dir, network, base, 
 
     res <- mergeModules(genes, groups=as.list(seq_along(genes)))
 
-
     while (TRUE) {
         centers <- lapply(genes, getCenter, gene.exprs=gene.exprs)
         h <- hclust(as.dist(1-pairwiseCompare(cor, centers)), method="average")
@@ -1809,7 +1736,6 @@ adjustClusters2 <- function(gene.exprs, clusters, tag, work.dir, network, base, 
 
         groups <- cutree(h, h=cut)
         groups <- split(seq_along(groups), groups)
-
 
         #         mm <- pairwiseCompare(setSimilarity, genes)
         #         mm <- pairwiseCompare(cor, centers)
@@ -1836,11 +1762,9 @@ adjustClusters2 <- function(gene.exprs, clusters, tag, work.dir, network, base, 
         genes <- lapply(res$modules, function(m) unique(E(m)[log2FC > 0 & score > 0]$origin))
     }
 
-
     toKeep <- sapply(res$modules, function(m) length(unique(E(m)[score > 0]$origin)) >= 5)
     res$modules <- res$modules[toKeep]
     res$centers <- res$centers[toKeep]
-
 
     for (i in seq_along(res$modules)) {
         saveModuleToXgmml(
@@ -1853,9 +1777,6 @@ adjustClusters2 <- function(gene.exprs, clusters, tag, work.dir, network, base, 
         rm(t)
         system2("neato", c("-Tpdf", "-O", sprintf("%s/c%02d.dot", work.dir, i)), stderr=NULL)
     }
-
-
-
 
     annotation_row <- do.call(rbind, lapply(seq_along(genes), function(i) {
         data.frame(gene=genes[[i]], cluster=sprintf("c%02d", i))
@@ -1887,8 +1808,6 @@ adjustClusters2 <- function(gene.exprs, clusters, tag, work.dir, network, base, 
     res
 }
 
-
-#
 #     clustDist <- function(genes1, genes2) {
 #         center1 <- getCenter(gene.exprs, genes1)
 #         center2 <- getCenter(gene.exprs, genes2)
@@ -1949,7 +1868,6 @@ gmwcs.solver2 <- function (gmwcs, nthreads = 1, timeLimit = -1, nodes.group.by=N
                                         paste0, collapse=" ")$name
                 )
             }
-
         }
         et <- rename(et[, c("from", "to", "score")], c("from"="#from"))
 
@@ -2047,8 +1965,6 @@ dualGraph <- function(m, what) {
     dm
 }
 
-
-
 makeENetworkWithScore <- function(score, base, network) {
     fake.gene.de <- data.frame(
         ID=names(score),
@@ -2089,5 +2005,3 @@ makeANetworkWithScore <- function(score, base, network) {
 
     list(subnet.scored=net)
 }
-
-

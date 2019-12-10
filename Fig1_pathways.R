@@ -1,13 +1,8 @@
-library(ggplot2)
-library(cowplot)
-library(RColorBrewer)
-library(scales)
-
 source("utils.R")
-load("~/Documents/immGen/pathways/pathway2name.rda")
-load("~/Documents/immGen/pathways/pathways.rda")
-load("~/Documents/immGen/final_objects/337_es.total.Rda")
-load("~/Documents/immGen/final_objects/337_es.top12k.Rda")
+load("Data/pathway2name.rda")
+load("Data/pathways.rda")
+load("Data/337_es.total.Rda")
+load("Data/337_es.top12k.Rda")
 es
 es.top12k
 
@@ -21,7 +16,6 @@ fdata <- exprs(es)
 #
 # pcaPlot(es.top12k, 1, 2) + aes(color=scale(mito)) +
 #   scale_color_gradientn(colours = gradientColor) + theme_bw()
-
 
 # pathway2name$PATHNAME[grep("folate", pathway2name$PATHNAME)]
 {
@@ -75,7 +69,7 @@ fdata <- exprs(es)
   # Antigen processing - cross presentation
   # crosspP <- apply(fdata[which(fData(es)$Entrez %in% pathways$``), ], 2, mean)
 
-  moothaGenes <- read.table("~/Documents/immGen/pathways/mootha.txt")
+  moothaGenes <- read.table("Data/mootha.txt")
   length(moothaGenes$V1) # 447
   moothaNumbers <- which(tolower(fData(es)$gene) %in% tolower(as.character(moothaGenes$V1)))
   length(moothaNumbers) # 413
@@ -134,8 +128,6 @@ thd_row <- plot_grid(p5 + theme(legend.position="none"),
                      rel_widths = c(1, 1, 1, 1), nrow = 1)
 
 q <- plot_grid(sec_row, thd_row, rel_heights = c(1, 1), ncol = 1 )
-
-ggsave('~/Desktop/mpg.pdf', width = 18.5, height = 9, dpi = 700)
 
 
 

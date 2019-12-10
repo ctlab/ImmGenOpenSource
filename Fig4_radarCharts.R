@@ -1,16 +1,7 @@
-# getwd()
-gc()
-setwd("~/Documents/immGen/GAM-clustering/10_32_04_191021_Todorov_32/Clustering/_current/Fig4/")
 library(tidyverse)
-
-
-# load('a.rda')
-# anno <- a
-anno <- read_csv("~/Documents/immGen/GAM-clustering/10_32_04_191021_Todorov_32/Clustering/_current/Fig4/anno.csv")
-
-load("~/Documents/immGen/GAM-clustering/10_32_04_191021_Todorov_32/Clustering/_current/Fig4/eyegene.rda")
+load("Data/eyegene.rda")
+anno <- read_csv("Data/anno.csv")
 df <- eyegene %>% as_tibble()
-
 
 # Glimpse on annotation
 anno %>%
@@ -25,9 +16,6 @@ stats <- df %>%
   summarize(max = max(value),
             min = min(value))
 stats
-
-
-###################### FUNCTIONS #######################
 
 plot_radarchart <- function(long) {
   long %>%
@@ -69,16 +57,9 @@ plot_radarchart_png <- function(long, filename) {
   dev.off()
 }
 
-####################################################
-
-
-
 # Choose specific meta-sample
-load("~/Documents/immGen/GAM-clustering/10_32_04_191021_Todorov_32/Clustering/annotation_colors.Rda")
-load("~/Documents/immGen/GAM-clustering/10_32_04_191021_Todorov_32/Clustering/_current/Fig4/annotation_colors.Rda")
-View(annotation_colors$metaSample)
+load("Data/annotation_colors.Rda")
 names(annotation_colors$metaSample)
-
 
 for(metasample in names(annotation_colors$metaSample)){
   print(metasample)
