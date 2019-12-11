@@ -1,0 +1,20 @@
+PATHID	pval	k	K	padj	PATHNAME	genes
+R-MMU-8956320	4.41153768233942e-19	8	15	5.40854519854813e-16	Nucleobase biosynthesis	Paics Adsl Gart Umps Cad Ppat Atic Dhodh
+R-MMU-15869	1.31769906866665e-18	11	80	8.07749529092657e-16	Metabolism of nucleotides	Paics Adsl Gart Umps Nudt5 Tyms Cad Ppat Atic Dhodh Ctps
+mmu00670	8.67027143194647e-13	6	19	3.54325092518879e-10	One carbon pool by folate	Shmt2 Atic Mthfd1 Dhfr Gart Tyms
+R-MMU-73817	1.60981524905399e-11	5	12	4.58710799726669e-09	Purine ribonucleoside monophosphate biosynthesis	Paics Adsl Gart Ppat Atic
+mmu01523	1.87076182596521e-11	6	30	4.58710799726669e-09	Antifolate resistance	Shmt2 Atic Dhfr Fpgs Gart Tyms
+mmu00230	6.06099144371161e-09	7	136	1.23134165002501e-06	Purine metabolism	Atic Adsl Gart Ppat Prps1l3 Nudt5 Paics
+mmu01230	7.03049881743483e-09	6	77	1.23134165002501e-06	Biosynthesis of amino acids	Psph Psat1 Shmt2 Prps1l3 Aldh18a1 Idh3a
+R-MMU-196757	2.20388247761313e-08	4	16	3.37744989694213e-06	Metabolism of folate and pterines	Shmt2 Mthfd1 Fpgs Dhfr
+mmu00240	8.76401708690074e-08	5	58	1.19385388317115e-05	Pyrimidine metabolism	Tyms Umps Ctps Dhodh Cad
+mmu01200	3.35772931530376e-06	5	120	0.00041165761405624	Carbon metabolism	Psph Psat1 Shmt2 Prps1l3 Idh3a
+R-MMU-70614	7.83671607702515e-06	3	20	0.000873437628221166	Amino acid synthesis and interconversion (transamination)	Aldh18a1 Psat1 Psph
+R-MMU-71291	1.13848573390923e-05	5	154	0.0011631529248106	Metabolism of amino acids and derivatives	Enoph1 Aldh18a1 Psat1 Adi1 Psph
+R-MMU-196849	2.45155718335677e-05	4	87	0.00231200700522723	Metabolism of water-soluble vitamins and cofactors	Shmt2 Mthfd1 Fpgs Dhfr
+mmu00250	5.66372250919964e-05	3	38	0.00486293158141562	Alanine, aspartate and glutamate metabolism	Adsl Ppat Cad
+R-MMU-196854	5.94975315833885e-05	4	109	0.00486293158141562	Metabolism of vitamins and cofactors	Shmt2 Mthfd1 Fpgs Dhfr
+mmu00260	6.61579692373062e-05	3	40	0.00506935439280859	Glycine, serine and threonine metabolism	Psph Psat1 Shmt2
+mmu00270	0.00014567248810336	3	52	0.0105055570832188	Cysteine and methionine metabolism	Adi1 Psat1 Enoph1
+mmu_M00034	0.000249946297393781	2	12	0.0170241200335986	Methionine salvage pathway	Enoph1 Adi1
+R-MMU-1614635	0.000295030313070588	2	13	0.0190372191486601	Sulfur amino acid metabolism	Enoph1 Adi1

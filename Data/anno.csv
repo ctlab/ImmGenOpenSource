@@ -1,0 +1,244 @@
+samples,value
+EMP.E10.5.YS.1,EMP (E10.5)
+EMP.E10.5.YS.2,EMP (E10.5)
+MF.d8.EB.2,MF (E6-E8)
+MF.d8.EB.1,MF (E6-E8)
+MF.d6.EB.2,MF (E6-E8)
+MF.d6.EB.1,MF (E6-E8)
+MF.11cpSigFp.BAL.2,MF (E6-E8)
+MF.11cpSigFp.BAL.1,MF (E6-E8)
+MF.alv.11cp64pSiglecFp.Lu.3,alv MF & SPM
+MF.alv.11cp64pSiglecFp.Lu.1,alv MF & SPM
+MF.alv.11cp64pSiglecFp.Lu.2,alv MF & SPM
+MF.226pIIp.PC.4,alv MF & SPM
+MF.226pIIp.PC.1,alv MF & SPM
+MF.226pIIp.PC.3,alv MF & SPM
+MG.hippo.3,MG
+MG.cerebel.2,MG
+MG.cortex.3,MG
+MF.microglia.CNS.1,MG
+MF.microglia.CNS.2,MG
+MF.microglia.cerebr.CNS.2,MG
+MF.microglia.cerebr.CNS.1,MG
+MG.cerebel.1,MG
+MF.microglia.cerebel.CNS.1,MG
+MG.hippo.2,MG
+MF.microglia.cerebel.CNS.2,MG
+MG.hippo.1,MG
+MG.cerebel.3,MG
+MF.microglia.cerebr.CNS.3,MG
+MG.cortex.1,MG
+MG.cortex.2,MG
+MF.45lo.CNS.1,MG
+MF.45lo.CNS.2,MG
+MG.SC.1,MG
+MG.SC.3,MG
+MG.SC.2,MG
+MF.CCR2nFlt3n64p6ClonGFPntdTomaton.Ht.4,MG
+MF.CCR2nFlt3n64p6ClonGFPntdTomaton.Ht.3,MG
+MF.CCR2nFlt3n64p6ClonGFPntdTomatop.Ht.2,MG
+MF.CCR2nFlt3n64p6ClonGFPntdTomatop.Ht.1,MG
+MF.CCR2nFlt3n64p6ClonGFPntdTomaton.Ht.2,MG
+MF.CCR2nFlt3n64p6ClonGFPntdTomaton.Ht.1,MG
+MF.microglia.CNS.5,MG
+MF.microglia.CNS.4,MG
+MF.microglia.CNS.3,MG
+MF.6Gn480hi.Kd.1,MG
+MF.6Gn480hi.Kd.2,MG
+MF.11blop64p169p.Lv.2,MG
+MF.CCR2p64p6ClonGFPp.Ht.2,MG
+MF.64p6Cn206nIIp.Lu.2,MG
+MF.64p6Cn206nIIp.Lu.1,MG
+MF.64p6Cn206pIIn.Lu.2,MG
+MF.64p6Cn206pIIn.Lu.1,MG
+MF.480p.SP.2,MG
+MF.480p.SP.1,MG
+MF.64p6Cn6Gn.E18.5.Dr.2,tissue MF
+MF.64p6Cn6Gn.E18.5.Dr.1,tissue MF
+MF.64p6Cn6Gn.E18.5.Ep.1,tissue MF
+MF.64p6Cn6Gn.E18.5.Ep.2,tissue MF
+MF.64p6Cn6Gn.E14.5.Kd.2,tissue MF
+MF.64p6Cn6Gn.E14.5.Kd.1,tissue MF
+MF.64p6Cn6Gn.E18.5.Br.2,tissue MF
+MF.64p6Cn6Gn.E18.5.Br.1,tissue MF
+MF.64p6Cn6Gn.E18.5.Kd.2,tissue MF
+MF.64p6Cn6Gn.E18.5.Kd.1,tissue MF
+MF.64p6Cn6Gn.E16.5.Kd.1,tissue MF
+MF.64p6Cn6Gn.E16.5.Kd.2,tissue MF
+MF.64p6Cn6Gn.E14.5.Kd.3,tissue MF
+MF.64p6Cn6Gn.E16.5.Lu.2,tissue MF
+MF.64p6Cn6Gn.E14.5.Lu.3,tissue MF
+MF.64p6Cn6Gn.E16.5.Lu.1,tissue MF
+MF.64p6Cn6Gn.E14.5.Lu.2,tissue MF
+MF.64p6Cn6Gn.E14.5.Lu.1,tissue MF
+MF.64p6Cn6Gn.E18.5.Lv.2,tissue MF
+MF.64p6Cn6Gn.E18.5.Lv.1,tissue MF
+MF.64p6Cn6Gn.Lu.Neo.2,tissue MF
+MF.64p6Cn6Gn.E18.5.Co.3,tissue MF
+MF.64p6Cn6Gn.E18.5.Co.2,tissue MF
+MF.64p6Cn6Gn.E18.5.F.Ht.1,tissue MF
+MF.64p6Cn6Gn.E18.5.F.Ht.2,tissue MF
+MF.64p6Cn6Gn.E18.5.Thy.1,tissue MF
+MF.64p6Cn6Gn.E18.5.Thy.2,tissue MF
+MF.64p6Cn6Gn.E18.5.Thy.3,tissue MF
+MF.64pLYVEpIIp.Ao.2,tissue MF
+MF.64pLYVEpIIn.Ao.3,tissue MF
+MF.64pLYVEpIIn.Ao.2,tissue MF
+MF.64pLYVEpIIn.Ao.1,tissue MF
+MF.64pLYVEpIIp.Ao.1,tissue MF
+MF.64pLYVEpIIp.Ao.3,tissue MF
+MF.64pLYVEnIIp.Ao.2,tissue MF
+MF.DRG.4,tissue MF
+MF.SN.3,tissue MF
+MF.64pLYVEnIIp.Ao.3,tissue MF
+MF.64pLYVEnIIp.Ao.1,tissue MF
+MF.SN.1,tissue MF
+MF.64p6Cn6Gn.Kd.Neo.2,tissue MF
+MF.64p6Cn6Gn.Kd.Neo.1,tissue MF
+MF.KC.Clec4FpTim4p64p.Lv.4,tissue MF
+MF.KC.Clec4FpTim4p64p.Lv.3,tissue MF
+MF.KC.Clec4FpTim4p64p.Lv.2,tissue MF
+MF.64p.Th.4,tissue MF
+MF.64p.Th.2,tissue MF
+MF.64p.Th.3,tissue MF
+MF.64p.Th.1,tissue MF
+MF.PC.01,tissue MF
+MF.PC.09,tissue MF
+MF.PC.07,tissue MF
+MF.PC.03,tissue MF
+MF.64pMerTKp11blo.Sp.2,tissue MF
+MF.64pMerTKp11blo.Sp.1,tissue MF
+MF.64p6Cn6Gn.Lu.Neo.1,tissue MF
+MF.alv.6GnSigFp11cp.Lu.2,tissue MF
+MF.alv.6GnSigFp11cp.Lu.1,tissue MF
+MF.226pIIp480lo.PC.2,tissue MF
+MF.226pIIp480lo.PC.1,tissue MF
+MF.64p6Cn6Gn.E18.5.Sp.2,tissue MF
+MF.64p6Cn6Gn.E18.5.Sp.1,tissue MF
+MF.DRG.1,adipose MF
+MF.480p64pMerTKp.AT.3,adipose MF
+MF.480p64pMerTKp.WAT.3,adipose MF
+MF.480p64pMerTKp.WAT.2,adipose MF
+MF.480p64pMerTKp.WAT.1,adipose MF
+MF.480p64pLyve1p.MS.4,adipose MF
+MF.480p64pLyve1p.MS.3,adipose MF
+MF.480p64pLyve1p.MS.2,adipose MF
+MF.480p64pMerTKp.AT.1,adipose MF
+MF.480p64pMerTKp.MAT.2,adipose MF
+MF.480p64pMerTKp.AT.2,adipose MF
+MF.480p64pMerTKp.MAT.3,adipose MF
+MF.480p64pLyve1p.MS.1,adipose MF
+MF.480p64pMerTKp.MAT.4,adipose MF
+MF.480p64pMerTKp.MAT.1,adipose MF
+Mo.6Cp.Bl.2,Mo
+Mo.6Cp.Bl.1,Mo
+Mo.6Cp.Bl.5,Mo
+Mo.6Cp.Bl.8,Mo
+Mo.6Cp.Bl.7,Mo
+Mo.6Cp.Bl.6,Mo
+Mo.6Cp.Lu.5,Mo
+Mo.6Cp.Lu.4,Mo
+Mo.6Cn.Bl.3,Mo
+Mo.6Cp.Bl.3,Mo
+Mo.6Cp.Lu.1,Mo
+Mo.6Cp.Lu.2,Mo
+Mo.6Cp.Lu.3,Mo
+Mo.6Cn.Bl.2,Mo
+Mo.6Cn.Bl.1,Mo
+MF.CCR2p64p6ClonGFPp.Ht.3,Mo
+Mo.6Cp.Bl.4,Mo
+Mo.6Cn.Lu.1,Mo
+Mo.6Cn.Lu.3,Mo
+Mo.6Cn.Lu.2,Mo
+MF.11blop64p169p.Lv.1,Mo
+DC.103n11bpsiglecFn.Lu.4,Mo
+DC.103n11bpsiglecFn.Lu.5,Mo
+DC.103n11bpsiglecFn.Lu.6,Mo
+DC.pDC.SigHp6Cn.BM.2,pDC
+DC.pDC.DN.BM.2,pDC
+DC.pDC.DN.BM.1,pDC
+DC.pDC.SigHp6Cn.BM.3,pDC
+DC.pDC.SigHn6Cp.BM.2,pDC
+DC.pDC.SigHn6Cp.BM.1,pDC
+DC.8an103p.PP.3,pDC
+DC.8an103n.PP.3,pDC
+DC.pDC.SigHn6Cp.BM.3,pDC
+DC.8an103n11bn.PP.3,pDC
+DC.8an103n11bn.PP.4,pDC
+DC.8an103p.PP.4,pDC
+DC.8ap.MLN.3,pDC
+DC.8ap.PP.3,pDC
+DC.pDC.DP.BM.3,pDC
+DC.pDC.DP.BM.2,pDC
+DC.pDC.SigHn6Cp.Sp.3,pDC
+DC.pDC.SigHn6Cp.Sp.2,pDC
+DC.pDC.SigHn6Cp.Sp.1,pDC
+DC.8an103n.PP.4,pDC
+DC.pDC.DN.Sp.1,pDC
+DC.pDC.120g8p11cintp6Cp.Lv.4,tissue DC
+DC.pDC.120g8p11cintp6Cp.Lv.3,tissue DC
+DC.pDC.120g8p11cintp6Cp.Lv.2,tissue DC
+DC.pDC.120g8p11cintp6Cp.Lv.1,tissue DC
+DC.cDC2.172ap.Lv.3,tissue DC
+DC.cDC2.172ap.Lv.4,tissue DC
+DC.cDC2.172ap.Lv.1,tissue DC
+DC.cDC2.172ap.Lv.2,tissue DC
+DC.8an103p.PP.1,tissue DC
+DC.cDC1.XCR1p.Lv.3,tissue DC
+DC.cDC1.XCR1p.Lv.2,tissue DC
+DC.cDC1.XCR1p.Lv.1,tissue DC
+DC.24p8anXCR1n.Sp.2,tissue DC
+DC.24p8anXCR1n.Sp.1,tissue DC
+DC.103p11bnsiglecFn.Lu.6,tissue DC
+DC.103p11bnsiglecFn.Lu.5,tissue DC
+DC.8ap.MLN.2,tissue DC
+DC.8ap.PP.1,tissue DC
+DC.8ap.MLN.4,tissue DC
+DC.8ap.PP.4,tissue DC
+DC.pDC.DN.Sp.3,tissue DC
+DC.res.11bp.LuLN.2,tissue DC
+DC.res.8p.LuLN.1,tissue DC
+DC.res.11bp.LuLN.3,tissue DC
+DC.pDC.DN.Sp.2,tissue DC
+DC.24p8apXCR1p.Sp.2,tissue DC
+DC.24p8apXCR1p.Sp.1,tissue DC
+DC.24p8anXCR1p.Sp.2,tissue DC
+DC.24p8anXCR1p.Sp.1,tissue DC
+DC.24p8apXCR1n.Sp.2,tissue DC
+DC.XCR1pSIRPan.Th.4,tissue DC
+DC.XCR1pSIRPan.Th.3,tissue DC
+DC.XCR1pSIRPan.Th.1,tissue DC
+DC.XCR1pSIRPan.Th.2,tissue DC
+DC.8an103n11bn.PP.1,tissue DC
+DC.res.8p.LuLN.2,tissue DC
+DC.res.11bp.LuLN.1,tissue DC
+DC.XCR1nSIRPap.Th.3,tissue DC
+DC.XCR1nSIRPap.Th.2,tissue DC
+DC.XCR1nSIRPap.Th.1,tissue DC
+DC.24p8apXCR1n.Sp.1,tissue DC
+DC.8an103n11bn.MLN.1,tissue DC
+DC.103p11bnsiglecFn.Lu.4,tissue DC
+DC.8an103n11bn.MLN.2,tissue DC
+DC.8an103n.PP.1,tissue DC
+DC.SigHn.64n11chipBst2n11bp8anRFPp.Sp.3,tissue DC
+DC.SigHn.64n11chipBst2n11bp8anRFPp.Sp.2,tissue DC
+DC.SigHn.64n11chipBst2n11bp8anRFPn.Sp.3,tissue DC
+DC.SigHn.64n11chipBst2n11bp8anRFPn.Sp.2,tissue DC
+DC.8ap.MLN.1,tissue DC
+DC.8p4n.Sp.2,tissue DC
+DC.8p4n.Sp.1,tissue DC
+DC.8p4n.Sp.3,tissue DC
+DC.res.8p.LuLN.3,tissue DC
+DC.XCR1nSIRPap.Th.4,tissue DC
+DC.8an103n.MLN.2,migDC
+DC.8an103n.MLN.1,migDC
+DC.8an103p.MLN.2,migDC
+DC.8an103p.MLN.1,migDC
+DC.mig.103p.LuLN.2,migDC
+DC.mig.103p.LuLN.1,migDC
+DC.mig.103p.LuLN.3,migDC
+DC.8an103p.MLN.4,migDC
+DC.8an103p.MLN.3,migDC
+DC.8an103n.MLN.3,migDC
+DC.mig.11bp.LuLN.2,migDC
+DC.mig.11bp.LuLN.1,migDC

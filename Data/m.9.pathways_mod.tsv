@@ -1,0 +1,5 @@
+PATHID	pval	k	K	padj	PATHNAME	genes
+mmu00564	3.11052074282781e-11	5	97	3.81349843070689e-08	Glycerophospholipid metabolism	Dgkd Pnpla7 Lpcat2 Cds1 Cept1
+R-MMU-1483206	2.4193510734892e-06	3	76	0.00148306220804888	Glycerophospholipid biosynthesis	Cept1 Lpcat2 Cds1
+R-MMU-1483257	1.36980714294348e-05	3	135	0.00559794519082901	Phospholipid metabolism	Cept1 Lpcat2 Cds1
+mmu00565	0.000149028173475824	2	47	0.04567713517034	Ether lipid metabolism	Lpcat2 Cept1

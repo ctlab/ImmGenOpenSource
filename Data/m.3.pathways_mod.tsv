@@ -1,0 +1,33 @@
+PATHID	pval	k	K	padj	PATHNAME	genes
+mmu01200	3.38770011311611e-19	12	120	4.15332033868035e-16	Carbon metabolism	Me2 Aldoc Cs Got2 Mdh2 Ogdh Taldo1 Tkt Pfkp Suclg1 Rpe Pdhb
+mmu01230	5.88615266018542e-13	8	77	3.60821158069366e-10	Biosynthesis of amino acids	Aldoc Ass1 Cs Got2 Taldo1 Tkt Pfkp Rpe
+mmu00020	2.47912057434776e-09	5	32	7.59850456037588e-07	Citrate cycle (TCA cycle)	Cs Mdh2 Ogdh Suclg1 Pdhb
+mmu00030	2.47912057434776e-09	5	32	7.59850456037588e-07	Pentose phosphate pathway	Aldoc Taldo1 Tkt Pfkp Rpe
+R-MMU-71406	9.12805114764068e-09	5	41	2.2381981414015e-06	Pyruvate metabolism and Citric Acid (TCA) cycle	Cs Mdh2 Ogdh Pdhb Suclg1
+R-MMU-71403	3.22460010073798e-08	4	19	6.58893287250793e-06	Citric acid cycle (TCA cycle)	Cs Mdh2 Ogdh Suclg1
+mmu_M00009	8.78724737690366e-08	4	24	1.53902361201198e-05	Citrate cycle (TCA cycle, Krebs cycle)	Cs Ogdh Suclg1 Mdh2
+mmu00250	6.00234566451944e-07	4	38	8.17652864966759e-05	Alanine, aspartate and glutamate metabolism	Adss Ass1 Gfpt1 Got2
+mmu00620	6.00234566451944e-07	4	38	8.17652864966759e-05	Pyruvate metabolism	Me2 Mdh2 Pdhb Aldh1b1
+R-MMU-71387	8.26785206229469e-07	6	188	0.000101363866283733	Metabolism of carbohydrates	Tkt Taldo1 Mdh2 Pfkp Rpe Aldoc
+R-MMU-71336	1.164164331452e-06	3	12	0.000118938789196679	Pentose phosphate pathway (hexose monophosphate shunt)	Tkt Taldo1 Rpe
+mmu_M00004	1.164164331452e-06	3	12	0.000118938789196679	Pentose phosphate pathway (Pentose phosphate cycle)	Rpe Tkt Taldo1
+mmu_M00011	1.92159029482118e-06	3	14	0.000181220746265443	Citrate cycle, second carbon oxidation, 2-oxoglutarate => oxaloacetate	Ogdh Suclg1 Mdh2
+R-MMU-1428517	2.38813231744164e-06	5	123	0.000209132158655961	The citric acid (TCA) cycle and respiratory electron transport	Cs Mdh2 Ogdh Pdhb Suclg1
+mmu00010	5.6666178247656e-06	4	66	0.000463151563544175	Glycolysis / Gluconeogenesis	Aldoc Pfkp Pdhb Aldh1b1
+R-MMU-8978868	4.95213120827935e-05	4	114	0.00379457053834405	Fatty acid metabolism	Acadl Elovl5 Fasn Acot7
+R-MMU-163685	0.000154595846946868	3	58	0.0111490887268741	Integration of energy metabolism	Tkt Taldo1 Fasn
+mmu01212	0.00017967710830935	3	61	0.0122380074881813	Fatty acid metabolism	Acadl Fasn Elovl5
+R-MMU-73817	0.000209426819979153	2	12	0.0135135411207601	Purine ribonucleoside monophosphate biosynthesis	Adss Gmps
+R-MMU-70326	0.000227100582636737	3	66	0.0139212657156319	Glucose metabolism	Mdh2 Pfkp Aldoc
+R-MMU-8956320	0.000332070421471986	2	15	0.0193865874630788	Nucleobase biosynthesis	Adss Gmps
+mmu_M00167	0.00042915582393432	2	17	0.0239156836428853	Reductive pentose phosphate cycle, glyceraldehyde-3P => ribulose-5P	Aldoc Tkt
+R-MMU-389661	0.000538403122867553	2	19	0.0264032891454248	Glyoxylate metabolism and glycine degradation	Ogdh Pdhb
+mmu00220	0.000538403122867553	2	19	0.0264032891454248	Arginine biosynthesis	Ass1 Got2
+mmu01210	0.000538403122867553	2	19	0.0264032891454248	2-Oxocarboxylic acid metabolism	Cs Got2
+mmu_M00165	0.000597561757430091	2	20	0.0281773351772805	Reductive pentose phosphate cycle (Calvin cycle)	Aldoc Tkt
+R-MMU-556833	0.000624241345184747	5	395	0.0283451810813519	Metabolism of lipids	Acadl Elovl5 Fasn Gpd2 Acot7
+R-MMU-70263	0.000793054705988933	2	23	0.0335270713635321	Gluconeogenesis	Mdh2 Aldoc
+R-MMU-75105	0.000793054705988933	2	23	0.0335270713635321	Fatty acyl-CoA biosynthesis	Elovl5 Fasn
+mmu04066	0.00107102677475966	3	112	0.0433201833202383	HIF-1 signaling pathway	Aldoc Pfkp Pdhb
+mmu_M00001	0.00109537168264877	2	27	0.0433201833202383	Glycolysis (Embden-Meyerhof pathway), glucose => pyruvate	Pfkp Aldoc
+mmu00062	0.00126420218529766	2	29	0.0484347462242164	Fatty acid elongation	Elovl5 Acot7

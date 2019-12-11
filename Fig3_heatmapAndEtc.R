@@ -1,4 +1,5 @@
-session::restore.session("Data/session.RDa")
+load("Data/curRev.RDa")
+load("Data/expTable.RDa")
 
 curRev <- revs[[k]]
 expTable <- t(apply(expTable, 1, function (x) mosaic::zscore(x)))

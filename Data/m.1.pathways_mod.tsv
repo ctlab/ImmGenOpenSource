@@ -1,0 +1,22 @@
+PATHID	pval	k	K	padj	PATHNAME	genes
+R-MMU-556833	4.64728182075669e-17	18	395	5.69756751224771e-14	Metabolism of lipids	Neu1 Tbxas1 Akr1b10 Pla2g4a Ptgs1 Hpgds Ocrl Pon3 Ggt5 Alox5 Galc Ltc4s Pld1 B3galnt1 Gla Chpt1 Asah2 Gpd1
+R-MMU-2142753	2.73911401880101e-15	8	23	1.67907689352502e-12	Arachidonic acid metabolism	Tbxas1 Pla2g4a Ptgs1 Hpgds Pon3 Ggt5 Alox5 Ltc4s
+mmu00590	7.93078013867640e-12	9	89	3.24104548333909e-09	Arachidonic acid metabolism	Alox5 Cbr2 Ltc4s Pla2g4a Ptgs1 Tbxas1 Ggt5 Hpgds Fam213b
+R-MMU-8978868	2.49229492158256e-09	8	114	7.63888393465055e-07	Fatty acid metabolism	Tbxas1 Pla2g4a Ptgs1 Hpgds Pon3 Ggt5 Alox5 Ltc4s
+R-MMU-1660662	6.17278102816738e-08	5	33	1.51356590810664e-05	Glycosphingolipid metabolism	Neu1 Galc B3galnt1 Gla Asah2
+R-MMU-428157	1.84283622418825e-06	5	64	0.000348830196901524	Sphingolipid metabolism	Neu1 Galc B3galnt1 Gla Asah2
+mmu00480	1.9916895418521e-06	5	65	0.000348830196901524	Glutathione metabolism	Gstm5 Ggt5 Hpgds Lap3 Oplah
+R-MMU-211859	7.99067417140276e-06	5	86	0.00122457081676747	Biological oxidations	Tbxas1 Ptgs1 Hpgds Oplah Gstm5
+mmu00600	1.67230775701149e-05	4	48	0.00211630904960007	Sphingolipid metabolism	Gla Galc Neu1 Asah2
+mmu00603	1.72619008939647e-05	3	16	0.00211630904960007	Glycosphingolipid biosynthesis - globo and isoglobo series	Gla Gbgt1 B3galnt1
+R-MMU-156590	2.96682766512563e-05	3	19	0.00330666428858547	Glutathione conjugation	Hpgds Oplah Gstm5
+mmu00561	4.35105125176976e-05	4	61	0.00444532402889143	Glycerolipid metabolism	Aldh7a1 Gla Lpl Akr1b10
+R-MMU-1483166	6.94759582572515e-05	3	25	0.00620383724994494	Synthesis of PA	Pla2g4a Pld1 Gpd1
+R-MMU-1483257	7.08431659863206e-05	5	135	0.00620383724994494	Phospholipid metabolism	Pla2g4a Ocrl Pld1 Chpt1 Gpd1
+R-MMU-1483206	0.000103292566512353	4	76	0.00844244576960964	Glycerophospholipid biosynthesis	Pla2g4a Pld1 Chpt1 Gpd1
+mmu00564	0.000265629369619445	4	97	0.02035385044709	Glycerophospholipid metabolism	Gpd1 Pla2g4a Pld1 Chpt1
+mmu00260	0.000288550893223868	3	40	0.0208096114760272	Glycine, serine and threonine metabolism	Aldh7a1 Sardh Tha1
+mmu00565	0.000466183038114105	3	47	0.0317522447071052	Ether lipid metabolism	Pla2g4a Pld1 Chpt1
+R-MMU-156580	0.000496147035483702	3	48	0.0320145402896326	Phase II - Conjugation of compounds	Hpgds Oplah Gstm5
+R-MMU-446219	0.000559720837816965	3	50	0.0343108873581799	Synthesis of substrates in N-glycan biosythesis	Neu1 Renbp Npl
+mmu04142	0.000675375319156739	4	124	0.0394290543469601	Lysosome	Acp2 Gla Galc Neu1

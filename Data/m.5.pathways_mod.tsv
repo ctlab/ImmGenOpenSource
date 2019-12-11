@@ -1,0 +1,11 @@
+PATHID	pval	k	K	padj	PATHNAME	genes
+R-MMU-191273	1.00960396607054e-48	17	24	1.23777446240248e-45	Cholesterol biosynthesis	Hmgcs1 Hmgcr Msmo1 Cyp51 Mvd Pmvk Sqle Nsdhl Fdft1 Lss Mvk Acat2 Fdps Hsd17b7 Tm7sf2 Dhcr24 Idi1
+R-MMU-8957322	9.80110109380392e-39	17	67	6.0080749705018e-36	Metabolism of steroids	Hmgcs1 Hmgcr Msmo1 Cyp51 Mvd Pmvk Sqle Nsdhl Fdft1 Lss Mvk Acat2 Fdps Hsd17b7 Tm7sf2 Dhcr24 Idi1
+R-MMU-556833	1.40690278134279e-27	18	395	5.74954269975419e-25	Metabolism of lipids	Hmgcs1 Hmgcr Msmo1 Cyp51 Aacs Mvd Pmvk Sqle Nsdhl Fdft1 Lss Mvk Acat2 Fdps Hsd17b7 Tm7sf2 Dhcr24 Idi1
+mmu00100	3.1468999000222e-22	9	19	9.64524819356805e-20	Steroid biosynthesis	Cyp51 Fdft1 Hsd17b7 Lss Nsdhl Sqle Msmo1 Tm7sf2 Dhcr24
+mmu_M00101	5.36799204376858e-19	7	10	1.31623164913206e-16	Cholesterol biosynthesis, squalene 2,3-epoxide => cholesterol	Lss Cyp51 Tm7sf2 Msmo1 Nsdhl Hsd17b7 Dhcr24
+mmu_M00095	1.47501286916515e-18	7	11	3.01394296266079e-16	C5 isoprenoid biosynthesis, mevalonate pathway	Acat2 Hmgcs1 Hmgcr Mvk Pmvk Mvd Idi1
+mmu00900	1.9942662891925e-18	8	23	3.49281495792858e-16	Terpenoid backbone biosynthesis	Fdps Acat2 Hmgcr Mvk Mvd Hmgcs1 Idi1 Pmvk
+mmu00650	8.10500015393931e-06	3	27	0.0012420912735912	Butanoate metabolism	Acat2 Hmgcs1 Aacs
+mmu00280	7.47485695100483e-05	3	56	0.010182416246591	Valine, leucine and isoleucine degradation	Acat2 Hmgcs1 Aacs
+mmu00072	0.000115953006971452	2	11	0.0142158386547	Synthesis and degradation of ketone bodies	Acat2 Hmgcs1

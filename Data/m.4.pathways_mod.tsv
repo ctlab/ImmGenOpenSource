@@ -1,0 +1,28 @@
+PATHID	pval	k	K	padj	PATHNAME	genes
+mmu00071	2.72182501301678e-10	6	50	3.33695746595857e-07	Fatty acid degradation	Acat1 Cpt2 Eci1 Acaa2 Aldh9a1 Echs1
+mmu00280	5.52319693904687e-10	6	56	3.38571972363573e-07	Valine, leucine and isoleucine degradation	Acat1 Hsd17b10 Hmgcl Acaa2 Aldh9a1 Echs1
+mmu00620	6.13565190442359e-09	5	38	2.50743641160777e-06	Pyruvate metabolism	Glo1 Acat1 Fh1 Dlat Aldh9a1
+R-MMU-556833	1.40977178862739e-08	9	395	4.32095053214296e-06	Metabolism of lipids	Hmgcl Acat1 Echs1 Acaa2 Gpx4 Akr1b3 Cpt2 Eci1 Mecr
+R-MMU-8978868	4.24434765085188e-08	6	114	1.04071404398888e-05	Fatty acid metabolism	Echs1 Acaa2 Gpx4 Cpt2 Eci1 Mecr
+mmu01200	5.77327236907895e-08	6	120	1.17967198741513e-05	Carbon metabolism	Acat1 Fh1 Dlat Sdhb Gpt Echs1
+mmu01212	7.07682135413693e-08	5	61	1.23945471145313e-05	Fatty acid metabolism	Acat1 Cpt2 Mecr Acaa2 Echs1
+R-MMU-71291	2.55140294981327e-07	6	154	3.91002502058883e-05	Metabolism of amino acids and derivatives	Aldh9a1 Acat1 Dlat Hsd17b10 Ethe1 Gpt
+R-MMU-77289	3.34750894776766e-07	4	33	4.56005107773683e-05	Mitochondrial Fatty Acid Beta-Oxidation	Echs1 Acaa2 Eci1 Mecr
+R-MMU-71406	8.20523879530371e-07	4	41	0.000100596227630423	Pyruvate metabolism and Citric Acid (TCA) cycle	Sdhb Fh1 Dlat Glo1
+R-MMU-156590	5.08513889932975e-06	3	19	0.000544506587778133	Glutathione conjugation	Gss Ggct Mgst3
+mmu00480	5.32959139750212e-06	4	65	0.000544506587778133	Glutathione metabolism	Ggct Gss Gpx4 Mgst3
+R-MMU-70895	6.96303508622176e-06	3	21	0.000656667770439068	Branched-chain amino acid catabolism	Aldh9a1 Acat1 Hsd17b10
+mmu00650	1.52046587310806e-05	3	27	0.00133149368602177	Butanoate metabolism	Acat1 Hmgcl Echs1
+mmu00062	1.89490464167208e-05	3	29	0.00154876872712664	Fatty acid elongation	Mecr Acaa2 Echs1
+mmu00020	2.56302333950828e-05	3	32	0.00196391663389822	Citrate cycle (TCA cycle)	Fh1 Dlat Sdhb
+R-MMU-1428517	6.66491959259792e-05	4	123	0.00480658318854415	The citric acid (TCA) cycle and respiratory electron transport	Sdhb Fh1 Dlat Glo1
+R-MMU-156580	8.7692411146408e-05	3	48	0.00565846821397348	Phase II - Conjugation of compounds	Gss Ggct Mgst3
+mmu00380	8.7692411146408e-05	3	48	0.00565846821397348	Tryptophan metabolism	Acat1 Aldh9a1 Echs1
+mmu00072	0.000174716377371204	2	11	0.0104897207041554	Synthesis and degradation of ketone bodies	Acat1 Hmgcl
+mmu00310	0.00017967710830935	3	61	0.0104897207041554	Lysine degradation	Acat1 Aldh9a1 Echs1
+mmu_M00087	0.000247229584300925	2	13	0.0137774304705879	beta-Oxidation	Echs1 Acaa2
+mmu_M00011	0.000288114249968609	2	14	0.0153577421939789	Citrate cycle, second carbon oxidation, 2-oxoglutarate => oxaloacetate	Sdhb Fh1
+R-MMU-211859	0.000495980873199228	3	86	0.0253363562725939	Biological oxidations	Gss Ggct Mgst3
+R-MMU-71403	0.000538403122867553	2	19	0.0264032891454248	Citric acid cycle (TCA cycle)	Sdhb Fh1
+R-MMU-70268	0.000597561757430091	2	20	0.0281773351772805	Pyruvate metabolism	Dlat Glo1
+mmu_M00009	0.000864190708962524	2	24	0.0392406595995576	Citrate cycle (TCA cycle, Krebs cycle)	Sdhb Fh1

@@ -1,0 +1,27 @@
+PATHID	pval	k	K	padj	PATHNAME	genes
+mmu00010	2.08353834148771e-23	11	66	2.55441800666393e-20	Glycolysis / Gluconeogenesis	Aldoa Eno1 Gapdh Gpi1 Ldha Pdha1 Pgam1 Pgk1 Pkm Tpi1 Pgm2
+mmu_M00001	6.21346937691154e-19	8	27	3.80885672804677e-16	Glycolysis (Embden-Meyerhof pathway), glucose => pyruvate	Gpi1 Aldoa Tpi1 Gapdh Pgk1 Pgam1 Eno1 Pkm
+mmu01200	6.60963386676216e-18	10	120	2.7011370402168e-15	Carbon metabolism	Aldoa Eno1 Gapdh Gpi1 Pdha1 Pgam1 Pgk1 Pkm Tkt Tpi1
+R-MMU-71387	6.64470606150447e-16	10	188	2.03660240785112e-13	Metabolism of carbohydrates	Aldoa Tkt Pkm Gpi1 Eno1 Tpi1 Dera Pgm2 Pgk1 Pgam1
+mmu_M00002	1.23914384628975e-15	6	13	3.03838071110246e-13	Glycolysis, core module involving three-carbon compounds	Tpi1 Gapdh Pgk1 Pgam1 Eno1 Pkm
+mmu01230	5.75925318142343e-15	8	77	1.17680740007085e-12	Biosynthesis of amino acids	Aldoa Eno1 Gapdh Pgam1 Pgk1 Pkm Tkt Tpi1
+mmu_M00003	1.95251871003118e-14	6	19	3.41969705499747e-12	Gluconeogenesis, oxaloacetate => fructose-6P	Eno1 Pgam1 Pgk1 Gapdh Tpi1 Aldoa
+R-MMU-70263	7.24790477841528e-14	6	23	9.91792052799614e-12	Gluconeogenesis	Aldoa Gpi1 Eno1 Tpi1 Pgk1 Pgam1
+R-MMU-70171	7.28069206786013e-14	7	53	9.91792052799614e-12	Glycolysis	Aldoa Pkm Gpi1 Eno1 Tpi1 Pgk1 Pgam1
+R-MMU-70326	3.6540510604569e-13	7	66	4.47986660012016e-11	Glucose metabolism	Aldoa Pkm Gpi1 Eno1 Tpi1 Pgk1 Pgam1
+mmu00030	1.9132405537342e-10	5	32	2.13239356261649e-08	Pentose phosphate pathway	Aldoa Gpi1 Tkt Dera Pgm2
+mmu04066	1.63217748930178e-09	6	112	1.66754133490332e-07	HIF-1 signaling pathway	Aldoa Eno1 Gapdh Ldha Pdha1 Pgk1
+mmu_M00165	5.55640983858933e-09	4	20	5.24012189393117e-07	Reductive pentose phosphate cycle (Calvin cycle)	Pgk1 Gapdh Aldoa Tkt
+mmu05230	8.51848301346124e-07	4	67	7.45975726750248e-05	Central carbon metabolism in cancer	Ldha Pdha1 Pgam1 Pkm
+R-MMU-6798695	2.2413045615939e-06	6	377	0.000183189292834274	Neutrophil degranulation	Aldoa Pkm Gpi1 Dera Pgm2 Pgam1
+mmu04922	4.98524516842274e-06	4	104	0.000381994411030393	Glucagon signaling pathway	Ldha Pdha1 Pgam1 Pkm
+mmu00620	1.04110361797006e-05	3	38	0.000750819432724288	Pyruvate metabolism	Ldha Pdha1 Pkm
+R-MMU-168249	6.56994037824073e-05	6	680	0.00447485939095729	Innate Immune System	Aldoa Pkm Gpi1 Dera Pgm2 Pgam1
+R-MMU-71336	8.28690867404285e-05	2	12	0.00507987501718827	Pentose phosphate pathway (hexose monophosphate shunt)	Tkt Dera
+mmu_M00004	8.28690867404285e-05	2	12	0.00507987501718827	Pentose phosphate pathway (Pentose phosphate cycle)	Tkt Gpi1
+mmu_M00167	0.000170192147879895	2	17	0.00993597968098813	Reductive pentose phosphate cycle, glyceraldehyde-3P => ribulose-5P	Aldoa Tkt
+R-MMU-70268	0.000237293303285401	2	20	0.013223708628541	Pyruvate metabolism	Ldha Pdha1
+mmu00500	0.000653735328192779	2	33	0.034846935320189	Starch and sucrose metabolism	Gpi1 Pgm2
+mmu00051	0.000735708949014332	2	35	0.0375824654788155	Fructose and mannose metabolism	Aldoa Tpi1
+R-MMU-168256	0.000925785071464892	6	1101	0.0454004999046383	Immune System	Aldoa Pkm Gpi1 Dera Pgm2 Pgam1
+R-MMU-71406	0.00100987169224201	2	41	0.0476193344111038	Pyruvate metabolism and Citric Acid (TCA) cycle	Ldha Pdha1

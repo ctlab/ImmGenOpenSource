@@ -1,0 +1,26 @@
+PATHID	pval	k	K	padj	PATHNAME	genes
+R-MMU-556833	3.81665189203258e-18	18	395	4.67921521963194e-15	Metabolism of lipids	Hexa Cers2 Pon2 Cdipt Neu1 Glb1 Pla2g15 Gba Lpcat3 Chkb Gde1 Cerk Smpd1 Ggt5 Alox5 Ltc4s Agpat2 Pla2g6
+mmu00564	2.67386092604132e-10	8	97	1.60537158265448e-07	Glycerophospholipid metabolism	Dgkz Chkb Lpcat3 Pld3 Pla2g15 Cdipt Pla2g6 Agpat2
+R-MMU-1660662	4.10377491764607e-10	6	33	1.60537158265448e-07	Glycosphingolipid metabolism	Hexa Neu1 Glb1 Gba Cerk Smpd1
+R-MMU-428157	5.23775394014513e-10	7	64	1.60537158265448e-07	Sphingolipid metabolism	Hexa Cers2 Neu1 Glb1 Gba Cerk Smpd1
+mmu00600	4.40740367879449e-09	6	48	1.08069538204041e-06	Sphingolipid metabolism	Glb1 Gba Neu1 Smpd1 Cerk Cers2
+mmu04142	5.61149098561157e-08	7	124	1.14661465805997e-05	Lysosome	Glb1 Gaa Gba Hexa Neu1 Pla2g15 Smpd1
+R-MMU-1483206	7.40805203905998e-08	6	76	1.29746739998393e-05	Glycerophospholipid biosynthesis	Cdipt Pla2g15 Lpcat3 Chkb Agpat2 Pla2g6
+R-MMU-1483257	1.00889672638398e-07	7	135	1.54613423318345e-05	Phospholipid metabolism	Cdipt Pla2g15 Lpcat3 Chkb Gde1 Agpat2 Pla2g6
+mmu00511	1.80236648792516e-07	4	18	2.45522368244028e-05	Other glycan degradation	Glb1 Gba Hexa Neu1
+R-MMU-2142753	5.16199568730034e-07	4	23	6.32860671263021e-05	Arachidonic acid metabolism	Pon2 Ggt5 Alox5 Ltc4s
+R-MMU-1638074	2.50469059550948e-05	3	20	0.00279159151826784	Keratan sulfate/keratin metabolism	Hexa B4galt1 Glb1
+R-MMU-6798695	8.97831287038374e-05	7	377	0.00917284298257539	Neutrophil degranulation	B4galt1 Gaa Neu1 Glb1 Ggh Alox5 Agpat2
+mmu00052	0.000106392444182028	3	32	0.010033625889782	Galactose metabolism	Glb1 Gaa B4galt1
+mmu00590	0.00012417845992839	4	89	0.010874485133729	Arachidonic acid metabolism	Alox5 Ltc4s Ggt5 Pla2g6
+R-MMU-71387	0.000198330564387548	5	188	0.0159813931328807	Metabolism of carbohydrates	Hexa B4galt1 Gaa Glb1 Sord
+mmu00260	0.000208566305159943	3	40	0.0159813931328807	Glycine, serine and threonine metabolism	Aldh7a1 Alas1 Tha1
+R-MMU-8978868	0.000322295419146091	4	114	0.0232431872866534	Fatty acid metabolism	Pon2 Ggt5 Alox5 Ltc4s
+R-MMU-446219	0.000405575221632141	3	50	0.0276241789845002	Synthesis of substrates in N-glycan biosythesis	Neu1 Glb1 Amdhd2
+R-MMU-1482839	0.000447110150992389	2	11	0.0288503707956142	Acyl chain remodelling of PE	Lpcat3 Pla2g6
+R-MMU-1482788	0.000535549860164773	2	12	0.0328292064281006	Acyl chain remodelling of PC	Lpcat3 Pla2g6
+R-MMU-168249	0.000612809421542648	8	680	0.0357763976576803	Innate Immune System	B4galt1 Gaa Neu1 Glb1 Ggh Alox5 Agpat2 Pla2g6
+R-MMU-446193	0.000694112241242031	3	60	0.0386809821710332	Biosynthesis of the N-glycan precursor (dolichol lipid-linked oligosaccharide, LLO) and transfer to a nascent protein	Neu1 Glb1 Amdhd2
+mmu00561	0.000728560003629833	3	61	0.0388354158456598	Glycerolipid metabolism	Dgkz Aldh7a1 Agpat2
+mmu00604	0.000847341511716881	2	15	0.0430182089482551	Glycosphingolipid biosynthesis - ganglio series	Glb1 Hexa
+mmu00480	0.000877206544621842	3	65	0.0430182089482551	Glutathione metabolism	Gss Ggt5 Txndc12
