@@ -36,9 +36,9 @@ To explore data visit the following links:
 The initial patterns are defined using k-means clustering on gene expression matrix and then are refined in an iterative process using the network connections ([modulesDeriving.R]()).
 The final output presents a set of specific subnetworks (also called metabolic modules) that reflect metabolic variability within a given transcriptional dataset. 
 Each metabolic module is a piece of metabolic network whose gene expression has correlated expression pattern across all dataset. The following graph and heatmap represent network and constituting genes' expression for module 5, correspondingly:
-![module5](/readmePics/github.pic.m5.pdf.jpg "network and gene expression heatmap for module 5")
+![module5](/readmePics/github.pic.m5.png "network and gene expression heatmap for module 5")
 Averaged gene expression of all modules is represented at the following summary heatmap:
-![centers](/readmePics/github.m.centers.pdf.jpg "centers heatmap")
+![centers](/readmePics/github.m.centers.png "centers heatmap")
 
 ## Modules annotation
 Functional annotation of obtained modules is based on KEGG and Reactome canonical pathways ([modulesAnnotation.R]()).
