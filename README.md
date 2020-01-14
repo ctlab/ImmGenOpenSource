@@ -7,13 +7,13 @@
 
 To explore data visit the following links:
 - [Gene expression heatmap](https://artyomovlab.wustl.edu/phantasus/?preloaded=ImmGen_total_Eduw0mei4)
-- PCA with samples annotation
+- [PCA with samples annotation](http://artyomovlab.wustl.edu/publications/supp_materials/Immgen/PCADatasetOverview.html)
 - [Heatmap of metabolic modules](https://artyomovlab.wustl.edu/phantasus/?session=x039baa087a35e7) 
 
 ## Requirments
 - R
 - [gmwcs](https://github.com/ctlab/gmwcs-solver)- and [sgmwcs](https://github.com/ctlab/sgmwcs-solver)-solvers 	
-- KEGG mouse metabolic network 
+- [KEGG mouse metabolic network](GAM) 
 
 ## Input data
 [Raw counts](Data/OSMNP_unnormalized_genes_count_10_3_18.count_table) are processed by [rawDataProcessing.R]() script and the output object `es.top12k` has the following structure:
