@@ -12,7 +12,7 @@ To explore data visit the following links:
 
 ## Requirments
 - [R](https://www.r-project.org/)
-- [gmwcs](https://github.com/ctlab/gmwcs-solver)- and [sgmwcs](https://github.com/ctlab/sgmwcs-solver)-solvers 	
+- [sgmwcs-solver](https://github.com/ctlab/sgmwcs-solver) 	
 - [KEGG mouse metabolic network](GAM) 
 
 ## Input data
