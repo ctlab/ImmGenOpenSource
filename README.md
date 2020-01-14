@@ -11,7 +11,7 @@ To explore data visit the following links:
 - [Heatmap of metabolic modules](https://artyomovlab.wustl.edu/phantasus/?session=x039baa087a35e7) 
 
 ## Requirments
-- R
+- [R](https://www.r-project.org/)
 - [gmwcs](https://github.com/ctlab/gmwcs-solver)- and [sgmwcs](https://github.com/ctlab/sgmwcs-solver)-solvers 	
 - [KEGG mouse metabolic network](GAM) 
 
